@@ -20,7 +20,7 @@ function handleUserLogin(username, password) {
         const token = data.token;
         localStorage.setItem('token', token);
         alert('SignIn Successfully.');
-        window.location.replace('../src/main.html');
+        window.location.replace('../main.html');
     })
     .catch(error => {
         console.error('Error during SignIn: ', error.message)
