@@ -46,15 +46,11 @@ function fetchPostsAndRender() {
         .then(([postData, userData]) => {
             const posts = postData.posts;
             const users = userData.users;
-            // console.log("postData",posts)
-            // console.log("userData",users)
 
             if (posts && Array.isArray(posts) && users && Array.isArray(users)) {
                 // Get user data for the current post
                 posts.forEach(post => {
-                    // console.log("post::",post)
                     const user = users.find(user => user.id === post.userId);
-                    // console.log("USER=====>", user)
 
                     if (user) {
 
@@ -76,17 +72,6 @@ function fetchPostsAndRender() {
                     } else {
                         console.error('User not found for post.❌')
                     }
-
-                    // Call function to limit the post body content
-                    // const limitedContent = limitPostContent(post.body, 50);
-
-                    // Render the post using the shared instance of the Post class
-                    // const postElement = postInstance.render(posts,users);
-                    // console.log("POST ELEMENTS", postElement)
-                    // postContainer.appendChild(postElement);
-
-
-
                 })
             } else {
                 console.error('Invalid data: posts or users is missing or not an array.')
@@ -115,49 +100,6 @@ function limitPostContent(content, maxWords) {
 
 // Function to fetch single post data and render...
 
-// function fetchPostsAndRender() {
-//     Promise.all([API.fetchSinglePost(postId), API.fetchUsers()])
-//         .then(([postData, userData]) => {
-//             const posts = postData.posts;
-//             const users = userData.users;
-//             // console.log("postData",posts)
-//             // console.log("userData",users)
-
-//             if (posts && Array.isArray(posts) && users && Array.isArray(users)) {
-//                 // Get user data for the current post
-//                 posts.forEach(post => {
-//                     // console.log("post::",post)
-//                     const user = users.find(user => user.id === post.userId);
-//                     // console.log("USER=====>", user)
-
-//                     if (user) {
-
-//                          // Limit the post body content
-//                          const limitedContent = limitPostContent(post.body, 50);
-//                          const limitedPost = { ...post, body: limitedContent };
-
-//                          // Create a new instance of the Post class
-//                          const postInstance = new Post(limitedPost, user);
- 
-//                          const postElement = postInstance.render();
-//                         //  showSinglePost();
-
-//                         if (postElement) {
-//                             postContainer.appendChild(postElement);
-//                         } else {
-//                             console.log('Error: rendering post.❌')
-//                         } 
-//                     } else {
-//                         console.error('User not found for post.❌')
-//                     }
-//                 })
-//             } else {
-//                 console.error('Invalid data: posts or users is missing or not an array.')
-//             }
-//         })
-//         .catch (err => console.error(err));
-// }
-
 function fetchSinglePost(postId) {
     API.fetchSinglePost(postId) 
     .then(postData => {
@@ -167,13 +109,11 @@ function fetchSinglePost(postId) {
         console.error('Error fetching post.❌',error))
 }
 
-// Function to show the specific post when we click on the post title...
+// Function to show single post...
 
 function showSinglePost() {
 
     postContainer.addEventListener('click', function (e) {
-
-
 
         const postId = e.target.closest('.post').dataset.postId;
         console.log("🤔🤔🤔",postId)
