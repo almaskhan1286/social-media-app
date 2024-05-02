@@ -6,8 +6,9 @@
     "doc": "docs"
   },
   "scripts": {
-    "build": "tailwindcss -i ./src/input.css -o ./src/output.css --watch"
+    "build": "tailwindcss -i ./src/input.css -o ./src/output.css"
   },
+  
   "keywords": [],
   "author": "",
   "license": "ISC",
