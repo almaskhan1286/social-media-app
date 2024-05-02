@@ -1,0 +1,116 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.main-con {
+  display: nones;
+}
+
+.input {
+    position: relative;
+}
+
+#search-icon {
+    position: absolute;
+    top: 1.2rem;
+    left: 0.5rem;
+    color: #000000bf;
+
+}
+
+/* input {
+    width: 100%; 
+    margin: 0.5rem 0 !important;
+    padding: 0.6rem 1rem 0.6rem 2.5rem!important;  
+    outline-color: rgba(135, 206, 250, 0.429);
+} */
+
+#stories {
+    gap: 1rem;
+}
+
+.user {
+    gap: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.user h2 {
+    font-size: 0.8rem;
+}
+
+.user img {
+    width: 50px;
+    height: 50px;
+    border: 1px solid red;
+    border-radius: 50%;
+    border-style: dashed;
+}
+
+.add-story {
+    width: 50px;
+    height: 50px;
+    border: 1px solid black;
+    border-radius: 50%;
+    border-style: dashed;
+    background-color: rgba(173, 216, 230, 0.445);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.hexagone-img {
+    border: 3px solid rgb(255, 255, 255);
+    border-radius: 50%;
+    /* clip-path: polygon(0 25%, 50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%); */
+}
+
+
+
+
+/* Responsiveness */
+
+@media (min-width: 576px) {
+    .fs-sm {
+      font-size: 1.25rem; 
+    }
+    .p-fs-sm{
+        font-size: 0.5rem;
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .fs-md {
+      font-size: 1.2rem; 
+    }
+    .p-fs-md{
+        font-size: 0.7rem;
+    }
+  }
+  
+  @media (min-width: 992px) {
+    .fs-lg {
+      font-size: 1.75rem; 
+    }
+    .p-fs-lg{
+        font-size: 0.8rem;
+    }
+  }
+  
+  @media (min-width: 1200px) {
+    .fs-xl {
+      font-size: 1.5rem; 
+      font-weight: bold;
+    }
+    .p-fs-xl{
+        font-size: 1rem;
+    }
+    .date-text{
+        font-size: 2.5rem;
+        font-weight: bold;
+    }
+  }
+  

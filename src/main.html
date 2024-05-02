@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./output.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
+    <style scoped>
+      .drop-shadow-custom {
+        transition: all 0.25s ease;
+      }
+    
+      .drop-shadow-custom:hover {
+        box-shadow: 0 10px 30px -15px rgba(217, 219, 223, 0.7);  /* Custom shadow with rgba color */
+      }
+    </style>
+
+  </head>
+
+  <body class="bg-gray-900">  
+
+    <!-- Mobile Menus -->
+
+     <div class="w-screen h-screen absolute items-center z-20  md:!hidden flex text-2xl">
+      <span class="w-14 h-12 left-2 bg-gray-950 items-center justify-center rounded-r-full flex fixed">
+        <i class="fa-solid fa-bars text-white cursor-pointer" id="sidebarToggle"></i>
+        <!-- <i class="fa-solid fa-xmark text-white cursor-pointer" id="sidebarClose"></i> -->
+      </span>
+      <span class="w-14 h-12 right-2 bg-gray-950 items-center justify-center rounded-l-full flex fixed">
+        <i class="fa-solid fa-gear text-white cursor-pointer"></i>
+      </span>
+      </div>
+
+      <!-- App Body -->
+    <div class="flex flex-row mx-auto">
+
+      <!-- LEFT SIDED COLUMN -->
+
+      <div 
+        class="hidden h-full fixed md:sticky top-0  md:flex flex-col w-2/3 md:w-1/6 shrink-0 border-r border-gray-800 px-3 bg-gray-900" 
+        id="sidebar"
+      >
+              <!-- logo -->
+        <div 
+          class="flex justify-center mt-4 mb-10"
+        >
+          <img class="w-28" src="/assests/images/connect-logo.png" alt="Not Found">
+        </div>
+
+              <!-- menus -->
+        <div 
+          class="left-sideBar-wrapper flex flex-col gap-y-2 text-sm font-bold text-white relative"
+        >
+
+          <div 
+            class="flex gap-x-4 items-center hover:bg-gray-950 hover:rounded-r-full w-36 h-12 drop-shadow-custom"
+          >
+            <a href="http://127.0.0.1:5500/src/main.html">
+              <i class="material-icons outline-none cursor-pointer mt-1">home</i>
+            </a>
+            <a href="http://127.0.0.1:5500/src/main.html">
+              <h1 class="cursor-pointer">Home</h1>
+            </a>
+          </div>
+          <div 
+            class="flex gap-x-4 items-center hover:bg-gray-950 hover:rounded-r-full w-36 h-12 drop-shadow-custom"
+          >
+            <i class="material-icons outline-none cursor-pointer mt-1">message</i>
+            <h1 class="cursor-pointer">Message</h1>
+          </div>
+          <div 
+            class="flex gap-x-4 items-center hover:bg-gray-950 hover:rounded-r-full w-36 h-12  drop-shadow-custom"
+          >
+            <i class="material-icons outline-none cursor-pointer">school</i>
+            <h1 class=" cursor-pointer">Student Hub</h1>
+          </div>
+          <div 
+            class="flex gap-x-4 items-center hover:bg-gray-950 hover:rounded-r-full w-36 h-12  drop-shadow-custom"
+          >
+            <i class="material-icons outline-none cursor-pointer">history_edu</i>
+            <h1 class=" cursor-pointer">Education</h1>
+          </div>
+          <div 
+            class="flex gap-x-4 items-center hover:bg-gray-950 hover:rounded-r-full w-36 h-12  drop-shadow-custom"
+          >
+            <i class="material-icons outline-none cursor-pointer">music_note</i>
+            <h1 class=" cursor-pointer">Music</h1>
+          </div>
+          <div 
+            class="flex gap-x-4 items-center hover:bg-gray-950 hover:rounded-r-full w-36 h-12  drop-shadow-custom mt-28"
+          >
+            <i class="material-icons outline-none cursor-pointer">logout</i>
+            <h1 class=" cursor-pointer">Logout</h1>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- CENTRAL COLUMN -->
+
+      <!-- This column contain these components: stories, search-bar, all posts template, single post, user profile page with its all posts -->
+
+      <div class="flex flex-col w-full  md:w-2/3 px-2 " id="post-container">
+
+        <!-- Stories section -->
+        <div 
+          class="flex my-3 gap-x-2"  id="post-stories"
+        >
+
+          <div
+              class=" h-44 w-28 md:h-48 md:w-32 border border-gray-800  rounded-xl bg-cover bg-center items-center bg-no-repeat  flex flex-col justify-center "
+              style="background-image: url(/assests/images/profile-img.jpg);"
+            >    
+            <span class="h-40 flex flex-col justify-end"></span>
+            <span 
+              class="bg-gray-100 h-28 flex flex-col items-center justify-center w-full rounded-b-md"
+            >
+              <i class="material-icons text-white cursor-pointer bg-gray-900 rounded-full border-4 border-gray-100 -mt-16" >add</i>
+              <h1 class="text-sm font-semibold text-gray-800 ">Add your story</h1>
+            </span>
+
+          </div>
+          <div
+            class=" h-44 w-28 md:h-48 md:w-32 border border-gray-800  rounded-xl bg-cover bg-center items-center bg-no-repeat hidden md:flex flex-col justify-end gap-4"
+            style="
+              background-image: url(/assests/images/sp14.jpg);
+            "
+          >
+          <div class="flex flex-col items-center justify-end gap-y-2 pb-4 rounded-xl bg-gray-900 bg-opacity-50 h-full w-full  ">
+            <img
+            src="/assests/images/img-1.jpg"
+            alt=""
+            class=" w-9 h-9 rounded-full"
+          />
+          <h1 class="text-white text-xs font-semibold">Almas Khan</h1>
+          </div>
+
+          </div>
+          <div
+            class=" h-44 w-28 md:h-48 md:w-32 border border-gray-800  rounded-xl bg-cover bg-center items-center bg-no-repeat hidden md:flex flex-col justify-end gap-4"
+            style="
+              background-image: url(/assests/images/sp7.jpg);
+            "
+          >
+          <div 
+            class="flex flex-col items-center justify-end gap-y-2 pb-4 rounded-xl bg-gray-900 bg-opacity-50 h-full w-full  "
+          >
+            <img
+              src="/assests/images/img-1.jpg"
+              alt=""
+              class=" w-9 h-9 rounded-full"
+            />
+            <h1 class="text-white text-xs font-semibold">Almas Khan</h1>
+          </div>
+
+          </div>
+          <div
+            class=" h-44 w-28 md:h-48 md:w-32 border border-gray-800  rounded-xl bg-cover bg-center items-center bg-no-repeat  flex flex-col justify-end gap-4"
+            style="
+              background-image: url(/assests/images/sp5.jpg);
+            "
+          >
+          <div 
+            class="flex flex-col items-center justify-end gap-y-2 pb-4 rounded-xl bg-gray-900 bg-opacity-50 h-full w-full"
+          >
+            <img
+            src="/assests/images/img-1.jpg"
+            alt=""
+            class=" w-9 h-9 rounded-full"
+            />
+            <h1 class="text-white text-xs font-semibold">Almas Khan</h1>
+          </div>
+
+          </div>
+          <div
+            class=" h-44 hidden w-28 md:h-48 md:w-32 border border-gray-800  rounded-xl bg-cover bg-center items-center bg-no-repeat  md:flex flex-col justify-end gap-4"
+            style="
+              background-image: url(/assests/images/sp2.jpg);
+            "
+          >
+          <div 
+            class="flex flex-col items-center justify-end gap-y-2 pb-4 rounded-xl bg-gray-900 bg-opacity-50 h-full w-full ">
+            <img
+            src="/assests/images/img-1.jpg"
+            alt=""
+            class=" w-9 h-9 rounded-full"
+            />
+            <h1 class="text-white text-xs font-semibold">Almas Khan</h1>
+          </div>
+
+          </div>
+          <div
+            class=" h-44 w-28 md:h-48 md:w-32 border border-gray-800  rounded-xl bg-cover bg-center items-center bg-no-repeat  flex flex-col justify-end gap-4"
+            style="
+              background-image: url(/assests/images/sp1.jpg);
+            "
+          >
+          <div 
+            class="flex flex-col items-center justify-end gap-y-2 pb-4 rounded-xl bg-gray-900 bg-opacity-50 h-full w-full  ">
+            <img
+            src="/assests/images/img-1.jpg"
+            alt=""
+            class=" w-9 h-9 rounded-full"
+            />
+            <h1 class="text-white text-xs font-semibold">Almas Khan</h1>
+          </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- Search section -->
+        <div 
+          class="flex border border-gray-800 py-3 px-4 rounded-md my-6 justify-between items-center" id="post-search" 
+        >
+
+          <div>
+            <input
+            type="text"
+            placeholder="Search post here..."
+            class="border-none outline-none w-auto bg-transparent text-gray-200"
+          />
+          </div>
+          <div class="text-gray-400 flex gap-x-2">
+            <!-- <span><i class="material-icons hidden">nights_stay</i></span> -->
+              <i class="material-icons cursor-pointer hover:text-gray-200">flare</i>
+              <i class="material-icons cursor-pointer hover:text-gray-200">add_photo_alternate</i>
+          </div>
+
+        </div>
+
+        <!-- Post section -->
+
+        <template 
+          class="flex flex-col gap-y-4 my-2 rounded-md  post-template post" id="post-template" data-post-id=""
+        >
+          <div 
+            class="md:flex md:h-64 gap-x-4 gap-0 p-0 shadow-md hover:shadow-lg drop-shadow-custom border border-gray-800  bg-gray-900 rounded-md" id="post-id"
+          >
+
+            <!-- bg-img -->
+            <div
+              class="h-52 md:h-64 md:w-56 flex-none bg-cover bg-no-repeat rounded-t-2xl md:rounded-md text-center overflow-hidden"
+              style="background-image: url('/assests/images/img-1.jpg')"
+              title="Woman holding a mug"
+              id="post-card"
+            ></div>
+
+            <!-- post content -->
+            <div
+              class="border-none p-2  justify-between leading-normal border"
+              id="post-content"
+              >
+              <div class="mb-8">
+                <div class="flex justify-between align-middle">
+                  <p
+                    class="text-sm text-gray-400 flex items-center font-semibold"
+                    id="post-tag"
+                  >
+                  <!-- post tags -->
+                  </p>
+                  <span class="text-gray-400 hover:text-gray-200 cursor-pointer"
+                    ><i class="material-icons font-bold">more_horiz</i></span
+                  >
+                </div>
+                <div class="text-gray-100 font-bold text-xl mb-2 cursor-pointer post-title" id="post-title">
+                  <!-- post title -->
+                </div>
+                <p class="text-gray-300 text-base" id="post-body">
+                  <!-- post body -->
+                </p>
+              </div>
+  
+              <!-- social buttons -->
+              <div class="flex items-center justify-between" id="user-info">
+                <div class="flex items-center justify-center">
+                  <img
+                    class="w-10 h-10 border border-gray-800 rounded-full mr-4 cursor-pointer"
+                    src="/assests/images/img-6.jpg"
+                    alt="Avatar of Jonathan Reinink"
+                    id="post-userImg"
+                  />
+                  <div>
+                    <p class="text-gray-100 font-bold leading-none cursor-pointer mb-1" id="post-user">
+                      <!-- user-name -->
+                    </p>
+                    <p class="text-gray-400 text-xs font-semibold" id="user-addition">
+                      <!-- additional information -->
+                    </p>
+                  </div>
+                </div>
+                <div class="text-gray-400 cursor-pointer">
+                  <button><i class="material-icons hover:text-gray-200">bookmark</i></button>
+                  <button><i class="material-icons hover:text-gray-200">favorite</i></button>
+                  <button><i class="material-icons hover:text-gray-200 comment-btn" >comment </i></button>
+                  <button><i class="material-icons hover:text-gray-200">share</i></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </template>
+
+        <!-- Load more Posts Button -->
+        <!-- <div class="flex justify-center my-3">
+          <button class="border py-2 px-6 rounded-md bg-purple-600 hover:bg-purple-800 text-white font-semibold" id="load-more">Load more</button>
+        </div> -->
+
+        <!-- Single post section -->
+        
+        <div class="hidden flex-col w-full mb-32" id="single-post">
+
+          <span class="mt-5"><i class="material-icons cursor-pointer text-gray-400" id="navigate" style="font-size: 2rem;">arrow_back</i></span>
+
+          <div class="postcontainer flex flex-col justify-center items-center ">
+
+            <div class="mt-10 mb-2 font-semibold text-xs md:text-md text-gray-300 flex gap-x-2 cursor-pointer">
+              <span 
+                class=" rounded-md py-0.5 px-4 shadow-md hover:shadow-lg drop-shadow-custom  bg-gray-800"
+                >Updated on 2024
+              </span>
+              <span 
+                class=" rounded-md py-0.5 px-4 shadow-md hover:shadow-lg drop-shadow-custom bg-gray-800"
+                >by almaskhan
+              </span>
+            </div>
+
+            <div class="my-2">
+              <h1 
+                class="font-bold text-lg text-center text-gray-100  md:text-4xl" id="single-post-title"
+              >
+              Can a coffee make a better developer what you think isn't that clear?
+              </h1>
+            </div>
+
+            <!-- post-tags -->
+            <div 
+              class="my-5 text-center font-semibold text-sm text-gray-300 md:text-md flex gap-x-2 cursor-pointer post-tag"
+            >
+              <span 
+                class=" rounded-md py-1.5 px-4 shadow-md hover:shadow-lg drop-shadow-custom  bg-gray-800 post-tag"
+              >
+                beautiful
+              </span>
+              <span 
+                class=" rounded-md py-1.5 px-4 shadow-md hover:shadow-lg drop-shadow-custom  bg-gray-800 post-tag"
+              >
+                wonderful
+              </span>
+              <span 
+                class=" rounded-md py-1.5 px-4 shadow-md hover:shadow-lg drop-shadow-custom  bg-gray-800 post-tag"
+              >
+                nature
+            </span>
+            </div>
+            
+            <!-- post-Image -->
+            <div>
+              <img class="w-full rounded-md" src="/assests/images/sp2.jpg" alt="">
+            </div>
+  
+            <!-- post-body -->
+            <div class="my-4 ">
+              <p class="font-normal text-justify leading-6 text-gray-300" id="single-post-body">
+                <span class="font-semibold text-5xl text-green-900">L</span>orem ipsum dolor, sit amet consectetur adipisicing elit. Ea nam quas voluptatum molestias aliquid ipsa ullam velit accusamus. Deleniti delectus necessitatibus voluptas expedita, atque enim in officia nemo aperiam eius veritatis exercitationem, <br>nam voluptate quaerat at id corrupti odit sequi consequuntur modi voluptatem rem neque et qui. Suscipit quam nesciunt provident eius ea ducimus, amet modi tempore. Aspernatur natus nostrum placeat libero accusamus, <br>a enim consectetur, consequuntur quia dolores aliquid obcaecati numquam expedita aliquam nulla autem iure unde accusantium veritatis non architecto dicta, modi repellendus eligendi? Dolorem quas, non voluptas similique eveniet dignissimos unde reiciendis dolore error quasi necessitatibus inventore. <br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa sed ratione, quisquam possimus, debitis quibusdam, doloribus rerum ad molestias et quidem doloremque officiis facere exercitationem inventore architecto tempore odit non. Lorem ipsum dolor sit amet consectetur, adipisicing elit. <br>Sit repellendus similique illo excepturi praesentium porro? Vero, alias pariatur? Quas vitae quidem dolorum voluptatem corrupti ad tempora aspernatur rerum, reiciendis totam eaque. <br>Reprehenderit, eum. Quam, at in! Tenetur velit dolor officia ipsum dignissimos. Porro eum esse placeat nam voluptas similique hic, <br>rerum cumque qui! Distinctio repudiandae exercitationem, non, necessitatibus quidem sequi optio aliquid, nulla totam omnis eos consectetur itaque perferendis dolorum iure animi aut aperiam consequatur assumenda eligendi? <br>Dolore totam dolorem voluptatem labore quos saepe dolores! Sed libero architecto facilis veritatis numquam saepe aperiam eius doloremque laboriosam molestias. Voluptates, nulla facere!</p>
+            </div>
+
+          </div>
+
+          <div class="w-full border border-gray-700 my-10"></div>
+
+          <!-- Comments -->
+
+          <comments>
+
+            <!-- sort-btn -->
+            <div class="flex justify-between gap-x-2 items-center mb-10">
+              <div class="flex gap-x-2 items-center">
+                <span class="font-semibold text-sm md:text-lg text-gray-100">Sort by</span>
+                <span>
+                  <select 
+                    class="px-4 py-1 bg-gray-800 rounded-md text-gray-100 text-sm outline-none" name="comment" id="sort-comment"
+                  >
+                    <option>Trending</option>
+                    <option>Newset</option>
+                    <option>Most liked</option>
+                  </select>
+                </span>
+              </div>
+
+              <div class="flex justify-center items-center gap-x-1 md:gap-x-2">
+                <div class="flex flex-col items-center gap-y-0">
+                  <span>
+                    <h1 
+                      class="font-semibold text-sm md:text-lg text-gray-100" style="line-height: 1rem;"
+                    >
+                      Almas Khan
+                    </h1>
+                  </span>
+                  <span>
+                    <h1 
+                      class="font-medium text-xs md:text-sm text-gray-300" style="line-height: 1rem;"
+                    >
+                      @almaskhan
+                    </h1>
+                  </span>
+                </div>
+
+                <img class="w-12 h-12 md:w-16 md:h-16 rounded-full border border-gray-700" src="/assests/images/img-1.jpg" alt="user-img">
+              </div>
+
+            </div>
+
+            <!-- comment Input Template -->
+
+            <div class="flex justify-around mb-4">
+              <!-- <div class="flex justify-center  w-fit">
+                <img class="w-10 h-10  rounded-full" src="/assests/images/img-1.jpg" alt="user-img">
+              </div> -->
+              <div class="flex flex-col w-full gap-y-4">
+                <textarea name="text" id="post-comment" placeholder="Place your comment here..." class="border border-gray-700 text-gray-300 px-2 py-1 rounded-md bg-transparent focus:outline-none active:border-slate-400 w-full " rows="4"></textarea>
+                <button id="postButton" class="rounded-md w-full py-2 bg-gray-800 text-white font-semibold shadow-md hover:shadow-lg drop-shadow-custom ">Post</button>
+              </div>
+            </div>
+
+            <!-- Render Comments -->
+
+            <div class="w-full flex h-auto justify-center mx-auto">
+              <div class="  w-full pr-2 py-2 flex flex-col justify-center  border border-gray-700 rounded-md relative">
+          
+                  <!-- <div><img class="w-auto h-28 -top-3 -left-7 border-4 rounded-full absolute " src="/assests/images/img-1.jpg" alt="not found"></div> -->
+          
+                  <!-- Comment Btns -->
+          
+                  <!-- <div class="flex justify-between mr-7">
+                    <h3 class="text-sm md:text-lg font-bold">Almas Khan <span class="text-gray-600 font-semibold text-sm">4mins ago</span></h3>
+                    <div class="cursor-pointer text-gray-800 flex items-center justify-center">
+                      <i class="material-icons mr-5" style="font-size: 1.5rem;">reply</i>
+                      <i class="material-icons mr-1" style="font-size: 1.3rem;">thumb_up</i><p class="text-sm md:text-lg mr-2">34</p>
+                      <i class="material-icons mr-1" style="font-size: 1.3rem;">thumb_down</i><p class="text-sm md:text-lg">2</p>
+                      <i class="material-icons ml-2" style="font-size: 1.3rem;">more_vert</i>
+                    </div>
+          
+                  </div> -->
+                  
+                  
+                  <div>
+                    <p id="post-render">
+                    </p>
+                  </div>
+            </div>  
+          </div>
+
+
+
+          </comments>
+
+        </div>
+
+        <!-- User Profile Section -->
+
+        <div class="hidden flex-col gap-y-5 items-center" id="user-profile">
+          <div
+            style="background-image: url(/assests/images/sp3.jpg);"
+            class="w-full h-32 md:h-52 bg-cover bg-center rounded-md"
+          >
+          </div>
+          <div 
+            class="flex flex-col items-center -mt-14 md:-mt-20"
+          >
+            <img 
+              class="w-14 h-14 md:w-24 md:h-24 border-4 md:border-8 border-gray-900 rounded-full" 
+              src="/assests/images/img-9.jpg" alt=""
+            >
+            <h1 class="font-bold text-sm md:text-lg text-gray-100" id="name">Haseeb</h1>
+            <p class="text-xs font-semibold tracking-wide text-gray-300" id="user-name">@haseebali234</p>
+          </div>
+
+          <!-- Real time analysis -->
+          <div class="flex justify-center gap-x-4 text-sm mt-2.5 font-bold">
+            <div class="text-center flex flex-col">
+              <span class="md:text-lg text-gray-100">2K</span>
+              <span class="text-gray-300 text-xs">Followers</span>
+            </div>
+            <div class="text-center flex flex-col">
+              <span class="md:text-lg text-gray-100">34</span>
+              <span class="text-gray-300 text-xs">Posts</span>
+            </div>
+            <div class="text-center flex flex-col">
+              <span class="md:text-lg text-gray-100">423</span>
+              <span class="text-gray-300 text-xs">Following</span>
+            </div>
+          </div>
+
+          <!-- Btns -->
+
+          <div 
+            class="flex gap-x-3 items-center text-sm font-semibold text-gray-400 focus:text-white"
+          >
+            <button 
+              class="px-8 py-2 border border-gray-800 rounded-md shadow-md hover:shadow-lg drop-shadow-custom   focus:bg-gray-800"
+            >
+                Follow
+            </button>
+            <button 
+              class="px-8 py-2  border border-gray-800 rounded-md shadow-md hover:shadow-lg drop-shadow-custom focus:bg-gray-800"
+            >
+              Message
+            </button>
+          </div>
+          
+          <!-- All posts of a user -->
+          <div class="w-full text-sm font-bold flex justify-between text-gray-100">
+            <div class="flex gap-x-5 items-center">
+              <a href="#" class="hover:border-b-2 hover:border-gray-100 cursor-pointer ">All</a>
+              <span class="hover:border-b-2 hover:border-gray-100 cursor-pointer">Photos</span>
+              <span class="hover:border-b-2 hover:border-gray-100 cursor-pointer">Video</span>
+            </div>
+            <div class="flex items-center text-gray-400 hover:text-gray-100">
+              <i class="material-icons cursor-pointer">more_vert</i>
+            </div>
+          </div>
+
+          <!-- All post of a user grid template -->
+
+          <div class="grid grid-cols-2 md:grid-cols-5 w-full gap-2">
+          
+            <div 
+              style="background-image: url(/assests/images/sp2.jpg);"
+              class="h-72 w-auto bg-cover bg-center bg-no-repeat rounded-md boder border-gray-800"
+            >
+
+            </div>
+            <div 
+              style="background-image: url(/assests/images/sp4.jpg);"
+              class="h-72 w-auto bg-cover bg-center bg-no-repeat rounded-md boder border-gray-800"
+            >
+
+            </div>
+            <div 
+              style="background-image: url(/assests/images/sp1.jpg);"
+              class="h-72 w-auto bg-cover bg-center bg-no-repeat rounded-md boder border-gray-800"
+            >
+              <span class="w-full h-full flex justify-center items-center "><i class="material-icons text-white cursor-pointer border-2 rounded-full hover:border-white">play_arrow</i></span>
+            </div>   
+            <div 
+              style="background-image: url(/assests/images/sp3.jpg);"
+              class="h-72 w-auto bg-cover bg-center bg-no-repeat rounded-md boder border-gray-800"
+            >
+
+            </div>
+            <div 
+              style="background-image: url(/assests/images/sp6.jpg);"
+              class="h-72 w-auto bg-cover bg-center bg-no-repeat rounded-md boder border-gray-800"
+            >
+
+            </div>
+            <div 
+              style="background-image: url(/assests/images/sp7.jpg);"
+              class="h-72 w-auto bg-cover bg-center bg-no-repeat rounded-md boder border-gray-800"
+            >
+              <span class="w-full h-full flex justify-center items-center "><i class="material-icons text-white cursor-pointer border-2 rounded-full hover:border-white">play_arrow</i></span>
+            </div>   
+            <div 
+              style="background-image: url(/assests/images/sp10.jpg);"
+              class="h-72 w-auto bg-cover bg-center bg-no-repeat rounded-md boder border-gray-800"
+            >
+
+            </div>
+            <div 
+              style="background-image: url(/assests/images/sp8.jpg);"
+              class="h-72 w-auto bg-cover bg-center bg-no-repeat rounded-md boder border-gray-800"
+            >
+
+            </div>
+            <div 
+              style="background-image: url(/assests/images/sp12.jpg);"
+              class="h-72 w-auto bg-cover bg-center bg-no-repeat rounded-md boder border-gray-800"
+            >
+
+            </div>
+            <div 
+              style="background-image: url(/assests/images/sp13.jpg);"
+              class="h-72 w-auto bg-cover bg-center bg-no-repeat rounded-md boder border-gray-800"
+            >
+
+            </div>
+              <div 
+              style="background-image: url(/assests/images/sp15.jpg);"
+              class="h-72 w-auto bg-cover bg-center bg-no-repeat rounded-md boder border-gray-800"
+            >
+              <span class="w-full h-full flex justify-center items-center "><i class="material-icons text-white cursor-pointer border-2 rounded-full hover:border-white">play_arrow</i></span>
+            </div>  
+              <div 
+              style="background-image: url(/assests/images/sp11.jpg);"
+              class="h-72 w-auto bg-cover bg-center bg-no-repeat rounded-md boder border-gray-800"
+            >
+              <span class="w-full h-full flex justify-center items-center "><i class="material-icons text-white cursor-pointer border-2 rounded-full hover:border-white">play_arrow</i></span>
+            </div>    
+            
+          </div>
+        </div>
+    
+      </div>
+
+      <!-- RIGHT SIDED COLUMN -->
+      <div class="hidden sticky top-0 h-full md:flex w-1/5 flex-shrink-0 flex-col p-2 border-l border-gray-800">
+        <!-- <h1 class="text-lg font-bold">User Profile</h1> -->
+
+        <!-- user profile -->
+        <div class="flex flex-col  justify-center items-center ">
+            <img
+              src="./../assests/images/profile-img.jpg"
+              alt="Not Found"
+              class=" rounded-full w-16 h-16 cursor-pointer border border-gray-500 profile-btn"
+            />
+          <h1 class="text-sm text-gray-100 font-bold cursor-pointer profile-btn" id="name">Almas Khan</h1>
+          <p class="text-xs font-semibold text-gray-300 cursor-pointer profile-btn">@almaskhan</p>
+        </div>
+
+        <!-- New Members -->
+        <div class="flex flex-col mt-5 gap-y-2" id="card-wrapper">
+
+          <div class="flex justify-between items-center font-bold">
+            <h1 class="text-sm text-gray-100">New Members</h1>
+            <p class="text-xs text-gray-300 cursor-pointer">See all</p>
+          </div>
+
+          <!-- card -->
+
+          <template class="card-wrapper flex" id="card-template">
+            <div 
+              class="flex  items-center shadow-md hover:shadow-lg drop-shadow-custom border border-gray-800 rounded-md py-1 px-2"
+            >
+              <div class="flex items-center gap-5">
+                <img 
+                  class="rounded-full w-9 cursor-pointer border border-gray-500" 
+                  id="user-img" 
+                  src="/assests/images/img-1.jp" alt="Not Found">
+                <div class="flex flex-col  font-semibold">
+                  <h1 class=" text-sm cursor-pointer text-gray-100" id="user-name"></h1>
+                  <p class="text-xs text-gray-300" id="depart"></p>
+                </div>
+              </div>
+            </div>
+          </template>
+
+        </div>
+
+        <!-- Suggested For You -->
+        <div class="flex flex-col mt-5 gap-y-2" id="suggest-wrapper">
+
+          <div class="flex justify-between items-center font-bold mb-2">
+            <h1 class="text-sm text-gray-100">Suggested for you</h1>
+            <p class="text-xs text-gray-300 cursor-pointer">See all</p>
+          </div>
+
+          <!-- card -->
+
+          <template class="flex flex-col gap-y-2" id="suggest-template">
+
+            <div class="flex justify-between items-center shadow-md hover:shadow-lg drop-shadow-custom border border-gray-800  rounded-md py-1 px-2">
+              <div class="flex items-center justify-center gap-5">
+                <img 
+                  class="rounded-full w-9 cursor-pointer" 
+                  src="/assests/images/img-8.jpg" 
+                  id="suggest-img" 
+                  alt="Not Found">
+                <div class="flex flex-col font-semibold">
+                  <h1 class="text-sm text-gray-100 cursor-pointer" id="suggest-user">Zain Ali</h1>
+                  <p class="text-xs text-gray-300" id="sector">Recently</p>
+                </div>
+              </div>
+              <div >
+                <i class="material-icons text-gray-400 hover:text-gray-200 cursor-pointer">person_add</i>
+              </div>
+
+          </template>
+
+        </div>
+      </div>
+    </div>
+
+
+
+    <!--ALL SCRIPT FILES -->
+
+    <!-- Post scripts files -->
+    <script type="module" src="./api.js"></script>
+    <script type="module" src="./posts js/post.js"></script>
+    <script type="module" src="./posts js/post-manger.js"></script>
+
+    <!-- User Profile -->
+    <script type="module" src="./users js/user.js"></script>
+    <script type="module" src="./users js/user-manager.js"></script>
+
+    <!-- Comment scripts files -->
+    <script src="./comments js/comment.js" type="module"></script>
+    <script src="./comments js/comment-manager.js" type="module"></script>
+
+    
+
+  </body>
+</html>
+
